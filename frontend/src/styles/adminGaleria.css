@@ -1,0 +1,19 @@
+.sendPictureForm {
+    width: 50%;
+    margin-top: 100px;
+    margin-left: 5%;
+}
+
+.deletePictureForm {
+    width: 50%;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgesFromCategory {
+    width: 150px;
+    height: 150px;
+    /* object-fit: cover; */
+    padding: 5px;
+}

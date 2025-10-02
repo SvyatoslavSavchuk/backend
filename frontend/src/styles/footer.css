@@ -1,0 +1,70 @@
+.footer {
+    background-color: rgba(22, 21, 27, 100);
+    width: 90%;
+    height: auto; /* на мобилках лучше авто */
+    margin-top: 5%;
+    display: flex;
+    color: #ececec;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    justify-content: space-between;
+}
+
+.footer > div {
+    flex-direction: column;
+    display: flex;
+    width: 30%;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* ссылки */
+.footer > div:nth-child(2) {
+    order: 1;
+}
+/* контакты */
+.footer > div:nth-child(3) {
+    order: 2;
+}
+/* лого */
+.footer > div:nth-child(1) {
+    order: 3;
+}
+
+.footer > div > a {
+    text-decoration: none;
+    padding-top: 10px;
+}
+
+.footer > div > a:first-child {
+    text-decoration: none;
+    padding-top: 0;
+}
+
+.footer > div > span {
+    padding-top: 10px;
+}
+
+.my-personal-white {
+    color: #ececec;
+}
+
+.text-dec-underline {
+    text-decoration: underline;
+}
+
+/* --- Адаптив --- */
+@media (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer > div {
+        width: 100%;
+        margin-bottom: 20px;
+        padding-top: 20px;
+    }
+}
