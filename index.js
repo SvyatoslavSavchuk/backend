@@ -37,13 +37,12 @@ const DATABASE_NAME = 'sufitymontaz';
 const PORT = process.env.PORT || 3001;
 
 mongoose.connect(`${CONNECTION_STRING}/${DATABASE_NAME}`)
-  .then(() => {
-    console.log('Connection to DB...');
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
-  })
-  .catch((error) => console.log('error with conn to DB: ', error));
+  .then(() => console.log('Connected to DB'))
+  .catch((error) => console.log('DB error:', error));
+
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
 
 process.on('SIGINT', async () => {
   await mongoose.disconnect();
