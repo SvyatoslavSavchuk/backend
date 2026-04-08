@@ -36,16 +36,18 @@ const CONNECTION_STRING = process.env.MONGODB_URI;
 const DATABASE_NAME = 'sufitymontaz';
 const PORT = process.env.PORT || 3001;
 
+app.get('/', (req, res) => {
+  res.send('API is working 🚀');
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 mongoose.connect(`${CONNECTION_STRING}/${DATABASE_NAME}`)
   .then(() => console.log('Connected to DB'))
   .catch((error) => console.log('DB error:', error));
   console.log('MONGODB_URI:', CONNECTION_STRING);
- app.get('/', (req, res) => {
-    res.send('API is working 🚀');
-  });
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${PORT}`);
-  });
 process.on('SIGINT', async () => {
   await mongoose.disconnect();
   console.log('Application ended work.');
